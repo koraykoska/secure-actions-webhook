@@ -8,7 +8,7 @@ Sending a string:
 
 ```yaml
 - name: Webhook
-  uses: ybrin/secure-actions-webhook@0.1.1
+  uses: ybrin/secure-actions-webhook@0.1.2
   env:
     REQUEST_URI: ${{ secrets.REQUEST_URI }}
     REQUEST_DATA: "something_interesting"
@@ -19,7 +19,7 @@ Sending a json string:
 
 ```yaml
 - name: Webhook
-  uses: ybrin/secure-actions-webhook@0.1.1
+  uses: ybrin/secure-actions-webhook@0.1.2
   env:
     REQUEST_URI: ${{ secrets.REQUEST_URI }}
     REQUEST_DATA: '{ "something": "interesting" }'
