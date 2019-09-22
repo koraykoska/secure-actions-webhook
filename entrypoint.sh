@@ -1,4 +1,4 @@
 #!/bin/sh
 set -eu
 
-node main.js
+node /app/main.js
