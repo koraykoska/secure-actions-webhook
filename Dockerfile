@@ -10,14 +10,12 @@ LABEL "com.github.actions.icon"="message-square"
 LABEL "com.github.actions.color"="gray-dark"
 
 # Add the entry point
-ADD main.js /main.js
-ADD package.json /package.json
-ADD entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
-
-WORKDIR /
+ADD main.js main.js
+ADD package.json package.json
+ADD entrypoint.sh entrypoint.sh
+RUN chmod +x entrypoint.sh
 
 RUN npm install
 
 # Load the entry point
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["./entrypoint.sh"]
