@@ -29,9 +29,11 @@ function isJsonString(str) {
   }
 }
 
-const url = process.env.REQUEST_URL;
+const uri = process.env.REQUEST_URI;
 const data = {
-  data: isJsonString(process.env.REQUEST_DATA) ? JSON.parse(process.env.REQUEST_DATA) : process.env.REQUEST_DATA
+  data: isJsonString(process.env.REQUEST_DATA)
+    ? JSON.parse(process.env.REQUEST_DATA)
+    : process.env.REQUEST_DATA
 };
 
 const signature = createHmacSignature(data);
@@ -39,7 +41,7 @@ const signature = createHmacSignature(data);
 request(
   {
     method: "POST",
-    uri: "https://kube-cd.volkncloud.com/",
+    uri: uri,
 
     json: true,
     body: data,
